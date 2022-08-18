@@ -13,7 +13,7 @@ resource "aws_lb" "main" {
 
   tags = "${merge(
     var.extra_tags,
-    map("Name", format("%s-%s-nlb", var.environment, var.app_name)),
+    tomap("Name", format("%s-%s-nlb", var.environment, var.app_name)),
   )}"
 }
 
