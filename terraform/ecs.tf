@@ -6,7 +6,7 @@ resource "aws_ecs_cluster" "main" {
 
   tags = merge(
     var.extra_tags,
-    tomap("Name", "${var.environment}-${var.app_name}"),
+    tomap({Name = "${var.environment}-${var.app_name}"}),
   )
 }
 
@@ -20,7 +20,7 @@ resource "aws_cloudwatch_log_group" "cwlog" {
 
   tags = merge(
     var.extra_tags,
-    tomap("Name",  format("%s-%s", var.environment, var.app_name)),
+    tomap({Name =  format("%s-%s", var.environment, var.app_name)}),
   )
 }
 
