@@ -30,7 +30,7 @@ module "vpc-utm" {
 }
 
 module "utm" {
-  source     = "git@github.com:goofiness/squid-utm.git//terraform?ref=v1.1"
+  source     = "git@github.com:goofiness/squid-utm.git//terraform"
   vpc_id     = module.vpc-utm.vpc_id
   aws_region = var.region
 
