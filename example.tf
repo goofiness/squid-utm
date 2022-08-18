@@ -12,7 +12,7 @@ provider "aws" {
 
 module "vpc-utm" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "2.7.0"
+  version = "3.14.2"
 
   enable_dns_hostnames = true
   enable_dns_support   = true
