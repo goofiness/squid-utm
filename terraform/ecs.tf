@@ -86,7 +86,7 @@ EOF
   task_role_arn = aws_iam_role.ecs_execution_role.arn
   tags = merge(
     var.extra_tags,
-    map({Name = format("%s-%s-task", var.environment, var.app_name)}),
+    tomap({Name = format("%s-%s-task", var.environment, var.app_name)}),
   )
 }
 
