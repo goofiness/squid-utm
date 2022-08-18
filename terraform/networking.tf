@@ -19,6 +19,6 @@ resource "aws_security_group" "fargate" {
 
   tags = "${merge(
     var.extra_tags,
-    tomap("Name", format("%s-%s-sg", var.environment, var.app_name)),
+    tomap({Name = format("%s-%s-sg", var.environment, var.app_name)}),
   )}"
 }
